@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>fullPage test</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/vendors/jquery.easings.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/vendors/jquery.slimscroll.js"></script>
+		<style>
+			body{
+				color: #fff;
+				font-size: 16px;
+			}
+			.section{
+				text-align: center;
+			}
+			#fullpageMenu{
+				position: fixed;
+				top: 0px;
+				right: 200px;
+				font-size: 20px;
+				z-index: 999;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="fullpageMenu">
+			<li data-menuanchor="page1" class="active"><a href="#page1">1 section</a></li>
+			<li data-menuanchor="page2" class="active"><a href="#page2">2 section</a></li>
+			<li data-menuanchor="page3" class="active"><a href="#page3">3 section</a></li>
+			<li data-menuanchor="page4" class="active"><a href="#page4">4 section</a></li>
+		</ul>
+		<div id="fullpage">
+			<div class="section">slider1</div>	
+			<div class="section">
+				<div class="slide">1</div>
+				<div class="slide">2</div>
+				<div class="slide">3</div>
+				<div class="slide">4</div>
+				<div class="slide">5</div>
+			</div>	
+			<div class="section">slider3
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+			</div>	
+			<div class="section">slider4</div>	
+
+		</div>
+	</body>
+	<script>
+	$(function(){
+		$("#fullpage").fullpage({
+			sectionsColor:["red","blue","gold","grey"],
+			// controlArrows:false  //是否有箭头 slide  默认为true
+			// verticalCentered:false //是否垂直居中，默认为true
+			// resize:true, // 字体是否与窗口跟着变 默认为true
+			// scrollingSpeed:8000  //定义一页滑动的时间，默认是700
+			anchors:["page1","page2","page3","page4"],  //定义锚链接，不能与页面的id和那么相同  收藏网页时可以快速滚动到相关的页面
+			// lockAnchors:true //锁定锚链接   滑动时锚链接不变 默认为false
+			// autoScrolling :false, //是否使用插件的滚动方式，默认为true
+			// scrollBar:  true//是否包含滚动条 默认为false
+			// paddingTop:'200px',   //默认为0   中间的内容上边距
+			// paddingBottom:'100px' //默认为0   中间的内容下边距
+			// fixedElements:"#header" // 固定的元素，默认为null   jquery对象选择器
+			// keyboardScrolling:false //是否可以用键盘方向键导航，默认为true
+			// touchSensitivity: 10//在移动设备中滑动页面的敏感性，默认为5，用百分比来衡量 最高为100，越大越来滑动
+			// continuousVertical : true //是否循环滚动，默认为false，如果设置成true，则页面循环滚动  和loopTop、loopBottom不兼容，不能同时设置
+			// animateAbchor:false // 锚了解是否可以控制动画，默认为true 如果设置成false，则通过锚链接定位到某个页面显示不再有动画效果
+			// recordHistory:false // 是否记录历史，默认为true 可以直接点击回退到历史中 
+			// menu :'#fullpageMenu' // 绑定菜单，设定的相关属性与anchors的值对应后，菜单可以控制滚动，默认为false。可以设置为菜单的jquery选择器  需要设置anchors
+			// navigation:true,//是否显示导航，默认为false。如果设置成true，会显示小圆点，作为导航
+			// navigationPosition:'right', //设置导航圆点的位置
+			// navigationTooltips:["page1","page2","page3","page4"], //设置导航圆点的提示
+			// showActiveTooltip:true, //是否显示当前页面的导航tooltip信息,自动显示，不用鼠标移上去，默认为false
+			// slidesNavigation :true, //是否显示横向幻灯片的导航，默认为false
+			// slidesNavPosition :'top' //横向幻灯片的导航的显示位置
+			// scrollOverflow :true//内容超过满屏后是否显示滚动条，默认为false。如果设置为true，则会显示滚动条，如果要查看滚动条的内容，还需要jquery.slimscroll插件的配合。slimscroll插件只有勇于模拟传统的浏览器滚动条
+			// sectionSelector //section 的选择器，默认为.section
+			// slideSelector//slide的选择器，默认为.slide
+			afterLoad:function(anchorLink,index){
+				// console.log(anchorLink)
+				// console.log(index)
+				console.log("afterLoad:  " +"anchorLink="+anchorLink+" ; index="+index);
+			},
+			onLeave:function(index,nextIndex,direction){
+				console.log("onLeave:  " +"index="+index+" ; nextIndex="+nextIndex+" ; direction="+direction);
+				// console.log(index)
+				// console.log(nextIndex)
+				// console.log(direction)
+			},
+			afterRender:function(){
+				console.log("afterRender:  ");
+			},
+			afterResize:function(){
+				console.log("afterResize:  ");
+			}	
+
+
+		});
+
+		// fullpage 方法
+		// $.fn.fullpage.functionNAme();// fullpage方法调用方式
+		//1. moveSectionUp();  //向上滚动一页
+		//2. moveSectionDown(); //向下滚动一页
+		//3. moveTo(section,slide); //滚动到第几页，第几个幻灯片。注意：页面是从1开始，而幻灯片是从0开始
+		// silentMoveTo(section,slide); //和moveTo一样的功能，只是没有动画的效果 滚动的幻灯片
+		// moveSlideRight(); //幻灯片向右滚动 
+		// moveSlideLeft(); //幻灯片向左滚动
+		// setAutoScrolling(boolean);//动态设置autoScrolling
+		// setLockAnchors(boolean);//动态设置LockAnchors
+		// setRecordHistory(boolean);//动态设置RecordHistory
+		// setScrollingSpeeding(boolean);//动态设置ScrollingSpeeding
+		// setAllowScrolling(boolean,[directions]); //添加或删除鼠标滚轮/滑动控制，第一个参数true为启用，false为禁用，后面的参数为方向，取值包含all，up，down，left，right，可以使用多个，逗号隔开.如：setAllowScrolling(false,'down,left')
+		// destroy(type) //销毁fullpage 的特效，type可以不写，或者使用all。不写type，fullpage给页面添加的样式和html元素还在，如果使用all，则样式、html等全部销毁
+		// reBulid(); //重新更新页面和尺寸，用于通过ajax请求后改变了页面结构后，重建效果
+
+
+		// Lazy Loading 
+		 // data-src
+
+		 //回调
+		 // afterLoad(anchorLink,index);
+		 //滚动到某一section，且滚动结束后，会出发一次此回调函数，函数接受anchorLink和index两个参数，anchorLink是锚链接的名称，index是序号，从1开始计算。
+		 //我们可以根据anchorLink和index参数值的判断，出发相应事件
+		 // ps:
+
+		 //onLeave(index,nextIndex,direction)
+		 //在我们离开一个section时，会触发一次此回调函数，接收index、nextIndex、direction三个参数
+		 // 1、index是离开的“页面的序号”，从1开始计算
+		 // 2、nextIndex是滚动到的目标“页面”的序号，从1开始计算；
+		 // 3、direction判断是往上滚动还是往下滚动，值是up或down
+		 // 通过return false；可以取消滚动
+
+		 //afterRender()
+		 // 页面结构生成后的回调函数，或者说页面初始化完成后的回调函数s
+
+		 //afterResize()
+		 // 浏览器窗口尺寸改变后的回调函数
+
+		 //afterSlideLoad(anchorLink,index,slideAnchor,slideIndex)
+		 //滚动到某一幻灯片后的回调函数，与afterLoad类似
+
+		 //onSlideLeave(anchorLonk,index,slideIndex,direction,nextSlideIndex)
+		 //在我们离开一个silde时，会出发一次此函数，与onLeave类似
+	
+		 // move.js  做动画
+	})
+	</script>
+</html>
