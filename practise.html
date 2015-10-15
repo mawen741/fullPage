@@ -3,13 +3,157 @@
 	<head>
 		<meta charset="utf-8">
 		<title>fullPage test</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/vendors/jquery.easings.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/vendors/jquery.slimscroll.js"></script>
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<link rel="stylesheet" href="css/practise.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script src="js/jquery.easings.min.js"></script>
+		<script src="js/jquery.slimscroll.js"></script>
+		
+		<style>
+			.section{
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}	
+			.section1{
+				background-image: url(img/img1.png);
+			}
+			.section2{
+				background-image: url(img/img2.png);
+			}
+			.section3{
+				background-image: url(img/img3.png);
+			}
+			.section4{
+				background-image: url(img/img4.png);
+			}
+			.section5{
+				background-image: url(img/img5.png);
+			}
+			.s1-title-left{
+				position: absolute;
+				color: gold;
+				font-size: 18px;
+				font-weight: bold;
+				right: 8%;
+				/*top: 35%;*/
+				top:-100%;
+			}
+			.s1-title-left p,.s1-title-right p {
+				margin-top: 5px;
+			}
+			.s1-title-right{
+				position: absolute;
+				color: gold;
+				font-size: 18px;
+				font-weight: bold;
+				/*bottom: 20%;*/
+				bottom: -100%;
+				left:5%;
+			
+			}
+			.s2-title {
+				position: absolute;
+				width: 100%;
+				top: -200%;
+			}
+			.s2-title h2{
+				text-align: center;
+				color: red
+			}
+			.s3-img,.s4-img{
+				position: absolute;
+				left: -100px;
+				top:25%;
+			}
+			.s5-title{
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				font-size: 50px;
+				/*bottom: 20px;*/
+				bottom: 0px;
+				font-weight: bold;
+				color: rgb(229, 199, 35);
+				letter-spacing:5px;
+			}
+		</style>
 	</head>
 	<body>
-		
+		<div id="fullpage">
+			<div class="section section1">
+				<div class="s1-title-left">
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是左边的</p>
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是左边的</p>
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是左边的</p>
+				</div>
+				<div class="s1-title-right">
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是右边的</p>
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是右边的</p>
+					<p>真皮镂空鞋子，这个季节穿起来最巴适了,这是右边的</p>
+				</div>
+			</div>
+			<div class="section section2">
+				<div class="s2-title">
+					<h2>新品折扣 限时包邮</h2>
+				</div>
+			</div>
+			<div class="section section3">
+				<div class="s3-img">
+					<img src="img/zhengpin.png" alt="">
+				</div>
+			</div>
+			<div class="section section4">
+				<div class="s4-img">
+					<img src="img/s4-img.png" alt="">
+				</div>
+			</div>
+			<div class="section section5">
+				<div class="s5-title">
+					最后的一部分了终于
+				</div>
+			</div>
+		</div>
 	</body>
+	<script src="js/move.js"></script>
+	<script>
+	$(function(){
+		$("#fullpage").fullpage({
+			lockAnchors:true,
+			anchors:["page1","page2","page3","page4",'page5'],
+			showActiveTooltip:true,
+			navigation:true,
+			navigationPosition:'right',
+			navigationTooltips:["酷炫的鞋子","新品上市","特色内增高","非凡平底鞋",'甜美乐福鞋'],
+			afterLoad:function(anchorLink,index){
+				// console.log(anchorLink)
+				// console.log(index)
+				console.log("afterLoad:  " +"anchorLink="+anchorLink+" ; index="+index);
+				switch(index){
+					case 1:move(".s1-title-left").set("top","35%").duration('1s').end(move(".s1-title-right").set("bottom","20%").duration('1s').end());break;
+					case 2:move(".s2-title").set("top","35%").rotate(360).duration('0.5s').end();break;
+					case 3:move(".s3-img").set("left","0px").rotate(360).duration('1.5s').end();break;
+					case 4:move(".s4-img").to(500, 200).rotate(720).end();break;
+					case 5:move(".s5-title").set("bottom","20px").rotate(720).end();break;
+				}
+			},
+			onLeave:function(index,nextIndex,direction){
+				console.log("onLeave:  " +"index="+index+" ; nextIndex="+nextIndex+" ; direction="+direction);
+				// console.log(index)
+				// console.log(nextIndex)
+				// console.log(direction)
+				switch(index){
+					case 1:move(".s1-title-left").set("top","-100%").end();move(".s1-title-right").set("bottom","-100%").end();break;
+					case 2:move(".s2-title").set("top","-200%").rotate(-360).end();break;
+					case 3:move(".s3-img").set("left","-100px").rotate(-360).end();break;
+					case 4:move(".s4-img").to(0, 0).rotate(-720).end();break;
+					case 5:move(".s5-title").set("bottom","0px").rotate(-720).end();break;
+				}
+			},
+			afterRender:function(){
+				console.log("afterRender:  ");
+			}
+		});
+	})
+	</script>
 </html>
