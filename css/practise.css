@@ -1,7 +1,15 @@
-*{
-	margin: 0;
-	padding:0;
-}
-body{
-	background-color: #F2F2F2;
-}
+* { margin: 0; padding: 0; }
+body { background-color: #F2F2F2; }
+.section { background-repeat: no-repeat; background-size: 100% 100%; }
+.section1 { background-image: url(../img/img1.png); }
+.section2 { background-image: url(../img/img2.png); }
+.section3 { background-image: url(../img/img3.png); }
+.section4 { background-image: url(../img/img4.png); }
+.section5 { background-image: url(../img/img5.png); }
+.s1-title-left { position: absolute; color: gold; font-size: 18px; font-weight: bold; right: 8%;				/*top: 35%;*/ top: -100%; }
+.s1-title-left p, .s1-title-right p { margin-top: 5px; }
+.s1-title-right { position: absolute; color: gold; font-size: 18px; font-weight: bold;				/*bottom: 20%;*/ bottom: -100%; left: 5%; }
+.s2-title { position: absolute; width: 100%; top: -200%; }
+.s2-title h2 { text-align: center; color: red }
+.s3-img, .s4-img { position: absolute; left: -100px; top: 25%; }
+.s5-title { position: absolute; width: 100%; text-align: center; font-size: 50px;				/*bottom: 20px;*/ bottom: 0px; font-weight: bold; color: rgb(229, 199, 35); letter-spacing: 5px; }
